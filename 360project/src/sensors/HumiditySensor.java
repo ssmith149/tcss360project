@@ -2,7 +2,6 @@
  * TCSS 360 Project 1
  */
 package sensors;
-//comment
 import java.util.Random;
 
 /**

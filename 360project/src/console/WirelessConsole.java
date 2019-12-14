@@ -21,28 +21,35 @@ import java.util.Random;
  */
 public class WirelessConsole {
 
+	
 	/** The main panel. */
 	private JPanel mainPanel;
 
 	/** The Sensor Suite. */
 	private WirelessRouter wirelessRouter;
 
-	/**
-	 * Creates and initialises the Gui.
-	 */
+
 	/**
 	 * This will store each of the most recent weather data.
 	 */
 	private int[] report;
+	
+	/** The four possible directions. */
+	private String[] directions = {"N", "S", "W", "E" };
+	
 	/**
 	 * This will display the date, time and temperature for the UI
 	 */
+	
 	private JLabel label;
 	/**
 	 * This will store the forecast value for the next day.
 	 */
 	private int predict;
-
+	
+	/**
+	 * Creates and initialises the Gui.
+	 */
 	public WirelessConsole() {
 		wirelessRouter = new WirelessRouter();
 		mainPanel = new JPanel(new GridLayout(3, 2, 10, 10));
@@ -103,12 +110,13 @@ public class WirelessConsole {
 
 		// Add wind direction button
 		mainPanel.add(createButton("View Wind Direction", actionEvent -> {
-			showMessageDialog("Wind Direction", getDate() + " " + getTime() + "\n Wind Direction: N");
+			showMessageDialog("Wind Direction", getDate() + " " + getTime() + "\n Wind Direction: " +
+			directions[report[4]]);
 		}));
 
 		// Add rainfall button
-		mainPanel.add(createButton("View Rainfall", actionEvent -> {
-			showMessageDialog("Rainfall", getDate() + " " + getTime() + "\nRainfall: " + report[3] + "in.");
+		mainPanel.add(createButton("View Precipitation", actionEvent -> {
+			showMessageDialog("Precipitation", getDate() + " " + getTime() + "\nPrecipitation: " + report[3] + "%");
 		}));
 	}
 

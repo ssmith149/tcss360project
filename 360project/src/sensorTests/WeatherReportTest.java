@@ -26,7 +26,7 @@ class WeatherReportTest {
 	 */
 	@BeforeEach
 	public void setUp() {
-		myReport = new WeatherReport(5, 6, 7, 8);
+		myReport = new WeatherReport(5, 6, 7, 8, 1);
 	}
 
 	/**
@@ -36,7 +36,7 @@ class WeatherReportTest {
 	@Test
 	public final void testWeatherReport() {
 		int arr[] = myReport.getData();
-		int array[] = { 5, 6, 7, 8 };
+		int array[] = { 5, 6, 7, 8, 1};
 		assertArrayEquals(array, arr);
 
 	}
@@ -47,7 +47,7 @@ class WeatherReportTest {
 	@Test
 	public final void testGetData() {
 		int arr[] = myReport.getData();
-		int array[] = { 5, 6, 7, 8 };
+		int array[] = { 5, 6, 7, 8, 1};
 		assertArrayEquals(array, arr);
 	}
 }
