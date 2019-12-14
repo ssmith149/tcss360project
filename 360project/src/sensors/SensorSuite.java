@@ -26,7 +26,10 @@ public class SensorSuite {
 	 * Sensor that gathers humidity percentage.
 	 */
 	private HumiditySensor myHumiditySensor;
-
+	/**
+	 * Sensor that gets wind speed
+	 */
+	private WindDirectionSensor	myWindDirectionSensor;
 	/**
 	 * Initalizes all of the sensors and constructs all necessary objects.
 	 */
@@ -35,6 +38,7 @@ public class SensorSuite {
 		myWindSensor = new WindSpeedSensor();
 		myRainSensor = new RainSensor();
 		myHumiditySensor = new HumiditySensor();
+		myWindDirectionSensor = new WindDirectionSensor();
 	}
 
 	/**
@@ -45,7 +49,7 @@ public class SensorSuite {
 	 */
 	public WeatherReport collectData() {
 		return new WeatherReport(myTherm.getData(), myHumiditySensor.getData(), myWindSensor.getData(),
-				myRainSensor.getData());
+				myRainSensor.getData(), myWindDirectionSensor.getData());
 
 	}
 }

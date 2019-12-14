@@ -26,6 +26,10 @@ public class WeatherReport {
 	 * Reported rainfall
 	 */
 	private int myRainfall;
+	/**
+	 * Reported wind direction
+	 */
+	private int myDirection;
 
 	/**
 	 * Constructs a Weather Report object to hold data
@@ -34,12 +38,14 @@ public class WeatherReport {
 	 * @param humid     current humidity
 	 * @param windspeed current windSpeed
 	 * @param rainfall  current rainfall %
+	 * @param direction current wind direction
 	 */
-	public WeatherReport(int temp, int humid, int windspeed, int rainfall) {
+	public WeatherReport(int temp, int humid, int windspeed, int rainfall, int direction) {
 		myTemp = temp;
 		myHumidity = humid;
 		myWindSpeed = windspeed;
 		myRainfall = rainfall;
+		myDirection = direction;
 	}
 
 	/**
@@ -48,7 +54,7 @@ public class WeatherReport {
 	 * @return an array containing all of stored data.
 	 */
 	public int[] getData() {
-		int[] temp = { myTemp, myHumidity, myWindSpeed, myRainfall };
+		int[] temp = { myTemp, myHumidity, myWindSpeed, myRainfall, myDirection };
 		return temp;
 
 	}

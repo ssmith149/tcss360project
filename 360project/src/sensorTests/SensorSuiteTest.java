@@ -36,9 +36,12 @@ class SensorSuiteTest {
 	@Test
 	public final void testCollectData() {
 		int arr[] = mySuite.collectData().getData();
-		assertAll("Multiple tests failed", () -> assertTrue(arr[0] > -41 && arr[0] < 121),
-				() -> assertTrue(arr[1] > -1 && arr[1] < 101), () -> assertTrue(arr[2] > -1 && arr[2] < 71),
-				() -> assertTrue(arr[3] > -1 && arr[3] < 101)
+		assertAll("Multiple tests failed", 
+				() -> assertTrue(arr[0] > -41 && arr[0] < 121),
+				() -> assertTrue(arr[1] > -1 && arr[1] < 101), 
+				() -> assertTrue(arr[2] > -1 && arr[2] < 71),
+				() -> assertTrue(arr[3] > -1 && arr[3] < 101),
+				() -> assertTrue(arr[4] > -1 && arr[4] < 4)
 
 		);
 	}
